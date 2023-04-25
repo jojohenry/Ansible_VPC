@@ -182,12 +182,11 @@ Commit/push changes to GitHub, go to Ansible server. First Git pull, then run th
 ansible-playbook vpc_setup.yml
 ```
 
-![vpc-setup](https://user-images.githubusercontent.com/109822667/230649269-d07cf631-8ba8-448f-a2d0-7264b09d6b91.png)
-
+![vpcansible](https://user-images.githubusercontent.com/109822667/234352169-dba537fd-5137-49c4-9894-98e39cc10a7d.png)
 
 We can also check in AWS Console.
 
-![vpc-on-aws](https://user-images.githubusercontent.com/109822667/230649308-aa095803-016a-4a17-89a2-b1f0ade2777d.png)
+![vpc created](https://user-images.githubusercontent.com/109822667/234354015-696b2650-9168-4120-8879-74dc48f81516.png)
 
 
 ### Step-5: Subnets Play
@@ -271,8 +270,7 @@ Add below content to `vpc_setup.yml` and Commit/push changes to GitHub.
 ```
 Go to Ansible server. First Git pull, then run the playbook.
 
-![subnets-setup](https://user-images.githubusercontent.com/109822667/230650105-31f74a77-8aa3-40f3-96f5-0ea24ccd16e9.png)
-
+![subnetsss](https://user-images.githubusercontent.com/109822667/234352676-a7d009e9-e911-4e0f-b549-a92d4099c644.png)
 
 We can also check in AWS Console.
 
@@ -311,7 +309,7 @@ Add below content to `vpc_setup.yml` and Commit/push changes to GitHub.
 
 Go to Ansible server. First Git pull, then run the playbook.
 
-![igw-pubRT](https://user-images.githubusercontent.com/109822667/230650771-865b9a16-9a21-4af8-b287-37e9c4081dcc.png)
+![igw](https://user-images.githubusercontent.com/109822667/234352999-e7e6a508-4b25-4c89-ae8b-ec05943c021a.png)
 
 We can also check in AWS Console.
 
@@ -410,9 +408,10 @@ Add below content to `vpc_setup.yml` and Commit/push changes to GitHub.
 
 Our playbook run successfully. Outputs copied in a file.
 
-![debug-vars](https://user-images.githubusercontent.com/109822667/230650970-0221f7ed-6bee-4342-8020-77fb9cfa7a4f.png)
+![natgw](https://user-images.githubusercontent.com/109822667/234353630-0485ec2f-75e3-43bc-b89d-1616b023e411.png)
 
-![output-vars-copied-file](https://user-images.githubusercontent.com/109822667/230650988-72f6d43f-aa00-4a18-a27d-bd1c351d2b7d.png)
+![task play](https://user-images.githubusercontent.com/109822667/234354249-eab11962-a6c2-4d13-8dbe-72b3c65950b7.png)
+
 
 ### Step-9: Bastion Host Setup
 
