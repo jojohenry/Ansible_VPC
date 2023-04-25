@@ -53,16 +53,8 @@ vim test-aws.yml
 ```
 
 We can find Ansible AWS cloud Automation documentation from official site: `https://docs.ansible.com/ansible/2.9/modules/list_of_cloud_modules.html`. Copy paste below content to `test-aws.yml`.
-```sh
-- hosts: localhost
-  connection: local
-  gather_facts: False
-  tasks:
-    - name: sample ec2 key
-      ec2_key:
-        name: my_keypair
-        region: us-east-2
-```
+
+![key-pair](https://user-images.githubusercontent.com/109822667/234347470-4057e3fb-ee9f-400d-b2af-af8b77c24bee.png)
 
 When we try to run this playbook it will fail. Ansible requires `Python3` to be installed. We can install either using `pip`(python package manager) or with `apt`. Since we use aws, Boto is Python SDK in AWS. we will search `boto` in `apt`. 
 
@@ -73,7 +65,7 @@ sudo apt install python3-boto3 -y
 ```
 
 We can run again, and it is successful after `boto3` installation.
-![ubuntu link](https://user-images.githubusercontent.com/109822667/230645263-414bb8e3-158e-4951-a774-57833ea93570.png)
+![ansibleplaybook1](https://user-images.githubusercontent.com/109822667/234348119-90cf150d-d628-44dd-8fd0-c0e0e95829a5.png)
 
 
 This key is created but we did not have the private downloaded on our system, to be able to do that we need to add more tasks in our `test-aws.yml` playbook.
@@ -93,7 +85,6 @@ This key is created but we did not have the private downloaded on our system, to
 ```
 
 This time we will be able to see our file, but still ne weed to make manual work to store the private key. We can add another task to store the key in our local. From previous run, we know the exact path to get private_key from json file.
-![run-debug-module](https://user-images.githubusercontent.com/109822667/230646563-d088214a-1137-4e1d-80d4-f194f561b8ad.png)
 
 
 ```sh
@@ -117,8 +108,9 @@ This time we will be able to see our file, but still ne weed to make manual work
       when: keyout.changed
 ```
 
-Our keypair is stored 
-![key-stored-locally](https://user-images.githubusercontent.com/109822667/230647498-f1b619ff-733b-4d52-8b23-c1ad2be49f21.png)
+Our keypair is stored.  
+![key stored](https://user-images.githubusercontent.com/109822667/234348644-23b21f1e-47a8-4513-a939-52d1ef2a9b0f.png)
+
 
 
 ### Step-3: Variables for VPC
